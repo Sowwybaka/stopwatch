@@ -1,0 +1,10 @@
+.timing{
+    display: flex;
+    text-align: center;
+    width: 100px;
+    margin: auto;
+}
+.timing h1{
+    width: 50px;
+
+}
