@@ -12,30 +12,64 @@
 </head>
 
 <body class="bg-secondary">
-    <center>
-        <h1>
-            Stopwatch
-        </h1>
-        <button class="btn btn-success" id="start" onclick="start()">Click to start stopwatch</button>
-        <button class="btn btn-danger" id="stop" onclick="stopwatch()">Click to stop stopwatch</button>
-        <button class="btn btn-primary" id="reset" onclick="reset()">Reset</button>
-        <button class="btn btn-dark" id="lap" onclick="setLap()">Lap</button>
-        <center>
-        <div class="timing">
-            <h1 id="hours">0</h1>
-            <h1>:</h1>
-            <h1 id="mins">0</h1>
-            <h1>:</h1>
-            <h1 id="secs">0</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col py-2 text-center">
+                <h1>
+                    Stopwatch
+                </h1>
+            </div>
         </div>
-        <h6>Hour Min Sec</h6>
-    </center>
-        <div class="laps">
-            <h3 id="lap1"></h3>
-            <h3 id="lap2"></h3>
-            <h3 id="lap3"></h3>
+        <div class="row py-5">
+            <div class="col-md-3 py-1 text-center">
+                <button class="btn btn-success w-75" id="start" onclick="start()">Click to start stopwatch</button>
+            </div>
+            <div class="col-md-3 py-1  text-center"><button class="btn btn-danger w-75" id="stop" onclick="stopwatch()">Click to
+                    stop stopwatch</button></div>
+            <div class="col-md-3 py-1  text-center"><button class="btn btn-primary w-75" id="reset"
+                    onclick="reset()">Reset</button></div>
+            <div class=" col-md-3 py-1  text-center"><button class="btn btn-dark w-75" id="lap" onclick="setLap()">Lap</button>
+            </div>
+
         </div>
-    </center>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center m-auto ">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Hour(s)</th>
+                        <th scope="col">Minute(s)</th>
+                        <th scope="col">Second(s)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h1 id="hours">0</h1>
+                        </td>
+                        <td>
+                            <h1 id="mins">0</h1>
+                        </td>
+                        <td>
+                            <h1 id="secs">0</h1>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="timing">
+
+
+    </div>
+    <div class="laps">
+        <h3 id="lap1"></h3>
+        <h3 id="lap2"></h3>
+        <h3 id="lap3"></h3>
+    </div>
 
 
     <script>
@@ -47,13 +81,13 @@
         let startAllow = 1
         function startwatch() {
             i = i + 1
-            if (i%60 == 0){
-                minutes = minutes+1
+            if (i % 60 == 0) {
+                minutes = minutes + 1
             }
-            if (minutes%60 == 0 && minutes>0){
-                hours = hours+1
+            if (minutes % 60 == 0 && minutes > 0) {
+                hours = hours + 1
             }
-            seconds = i%60
+            seconds = i % 60
             console.log(seconds)
             console.log(minutes)
             console.log(hours)
@@ -72,9 +106,9 @@
         }
         function reset() {
             i = 0
-            seconds = i% 60
-            minutes = seconds%60
-            hours = minutes%60
+            seconds = i % 60
+            minutes = seconds % 60
+            hours = minutes % 60
             document.getElementById("secs").innerText = seconds
             document.getElementById("mins").innerText = minutes
             document.getElementById("hours").innerText = hours
